@@ -286,7 +286,7 @@ void que()//查询信息
     { 
       printf("错误指令！\n\n"); 
       system("pause"); 
-      continue; 
+      break; 
     } 
     system("cls"); 
     flag = 0;//用来标记职工信息是否存在 
@@ -485,16 +485,14 @@ void menu()//菜单
   printf("\t\t*                    *\n"); 
   printf("\t\t*       5.删除职工信息      *\n"); 
   printf("\t\t*                    *\n"); 
-  printf("\t\t*       6.输入密码          *\n"); 
+  printf("\t\t*       6.额外添加个人工资  *\n"); 
   printf("\t\t*                    *\n"); 
-  printf("\t\t*       7.额外添加个人工资  *\n"); 
-  printf("\t\t*                    *\n"); 
-  printf("\t\t*       8.计算工资          *\n"); 
+  printf("\t\t*       7.计算工资          *\n"); 
   printf("\t\t*                    *\n"); 
   printf("\t\t*       0.退出              *\n"); 
   printf("\t\t*                    *\n"); 
   printf("\t\t******************************************\n"); 
-  printf("\t\t请输入指令(0-8): "); 
+  printf("\t\t请输入指令(0-7): "); 
 } 
   
   
@@ -504,6 +502,7 @@ int main()
   n = 0; 
   system("color 0B"); 
   
+  password();
   while(1) 
   { frist_print();
     menu(); 
@@ -516,9 +515,8 @@ int main()
       case 3: que();  break; 
       case 4: mod();  break; 
       case 5: del();  break; 
-      case 6: password();  break;
-      case 7: add();  break;
-      case 8: wage();  break;
+      case 6:  add();  break;
+      case 7:wage();  break;
       case 0: printf("谢谢使用！\n\n"); return 0; 
       default :printf("\n--->无效的指令!\n\n\n"); 
     } 
